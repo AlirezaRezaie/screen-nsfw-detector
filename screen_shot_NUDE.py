@@ -5,9 +5,9 @@ import os
 import pyttsx3
 import shutil
 
-depp = [i for i in os.listdir('C:/Users/Lenovo/Desktop/nodyab')]
-print(depp)
-for i in depp:
+cur_dir = [i for i in os.listdir('C:/Users/Lenovo/Desktop/nodyab')]
+print(cur_dir)
+for i in cur_dir:
     if 'mamad' in i:
         os.remove(i)
     elif 'nude' in i:
@@ -21,11 +21,11 @@ def sayy(text):
 nudity = Nudity()
 threshold = 0
 while True:
-    im = ImageGrab.grab()
-    im.save('mamad.png')
-    c = nudity.has('mamad.png')
+    img = ImageGrab.grab()
+    img.save('mamad.png')
+    Has_nude = nudity.has('mamad.png')
     threshold = threshold + 1
-    if c == True:
+    if Has_nude == True:
          os.rename('mamad.png','nude%s.png'%threshold)
          try:
             shutil.move('C:/Users/Lenovo/Desktop/nodyab/nude%s.png'%threshold,'C:/Users/Lenovo/Desktop/nuudes')
@@ -34,5 +34,5 @@ while True:
              thresholdnew = threshold+1
              shutil.move('C:/Users/Lenovo/Desktop/nodyab/nude%s.png'%threshold,'C:/Users/Lenovo/Desktop/nuudes/nuude%s.png'%thresholdnew)
          print('shit')
-    elif c == False:
+    elif Has_nude == False:
         os.remove('mamad.png')
