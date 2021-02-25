@@ -22,11 +22,11 @@ nudity = Nudity()
 threshold = 0
 while True:
     img = ImageGrab.grab()
-    img.save('mamad.png')
-    Has_nude = nudity.has('mamad.png')
+    img.save('images_trash/mamad.png')
+    Has_nude = nudity.has('images_trash/mamad.png')
     threshold = threshold + 1
     if Has_nude == True:
-         os.rename('mamad.png','nude%s.png'%threshold)
+         os.rename('images_trash/mamad.png','nude%s.png'%threshold)
          try:
             shutil.move('C:/Users/Lenovo/Desktop/nodyab/nude%s.png'%threshold,'C:/Users/Lenovo/Desktop/nuudes')
 
@@ -35,4 +35,5 @@ while True:
              shutil.move('C:/Users/Lenovo/Desktop/nodyab/nude%s.png'%threshold,'C:/Users/Lenovo/Desktop/nuudes/nuude%s.png'%thresholdnew)
          print('shit')
     elif Has_nude == False:
-        os.remove('mamad.png')
+        os.remove('images_trash/mamad.png')
+os.remove('images_trash/mamad.png')
